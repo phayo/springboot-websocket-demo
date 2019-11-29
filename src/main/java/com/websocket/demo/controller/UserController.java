@@ -12,7 +12,6 @@ public class UserController {
     @SendTo("/topic/user")
     @MessageMapping("/hello")
     public UserResponse userResponse(User user){
-        System.out.println(user.getName());
         return new UserResponse("Hello " + user.getName());
     }
 //    public UserResponse getUser(User user){
