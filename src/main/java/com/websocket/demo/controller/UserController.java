@@ -9,9 +9,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class UserController {
 
-    @MessageMapping("/user")
     @SendTo("/topic/user")
-    public UserResponse getUser(User user){
+    @MessageMapping("/hello")
+    public UserResponse userResponse(User user){
+        System.out.println(user.getName());
         return new UserResponse("Hello " + user.getName());
     }
+//    public UserResponse getUser(User user){
+//        return new UserResponse("Hello " + user.getName());
+//    }
 }
